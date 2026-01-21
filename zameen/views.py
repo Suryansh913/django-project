@@ -9,12 +9,12 @@ def login(request):
     final=0
     data={}
     try:
-        if request.method=="post":
+        if request.method=="POST":
         
-            user = request.POST.get['user']
-            phone = request.POST.get['phone']
-            adhar = request.POST.get['adhar']
-            password = request.POST.get['password']
+            user = request.POST.get('user')
+            phone = request.POST.get('phone')
+            adhar = request.POST.get('adhar')
+            password = request.POST.get('password')
             final=phone
             data={
                 'u':user,
