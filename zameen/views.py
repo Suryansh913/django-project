@@ -60,17 +60,18 @@ def room(request, id):
     return render( request, "room.html",{'room': roomd ,'images':images,'data':data,})
 
 def base(request):
-    listingdata=listings.objects.all()
-    title=request.GET.get('search')
-    if title:
-        listingdata=listingdata.filter(Room_title__icontains=title)
-    data={
-        'listingdata':listingdata,
-        'title':title
-    }
-
+    try:
+        listingdata=listings.objects.all()
+        title=request.GET.get('search')
+        if title:
+            listingdata=listingdata.filter(Room_title__icontains=title)
+        data={
+            'listingdata':listingdata,
+            'title':title
+        }
+    except Exception as e:
+        data={'error': str(e), 'listingdata': []}
     
-
     return render(request, "base.html",data)
 def bhk2(request):
     listingdata=listings.objects.filter(Room_title="2bhk")

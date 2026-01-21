@@ -32,7 +32,8 @@ ALLOWED_HOSTS = [
     'django-project-2-3l3e.onrender.com',
     '*.onrender.com',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    '*'
     ]
 
 
@@ -89,7 +90,9 @@ WSGI_APPLICATION = 'zameen.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-if config('DATABASE_URL', default=None):
+DATABASE_URL = config('DATABASE_URL', default=None)
+
+if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.config()
     }
