@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: django-project
+    env: python
+    buildCommand: "pip install -r requirements.txt && bash build.sh"
+    startCommand: "gunicorn zameen.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.0
