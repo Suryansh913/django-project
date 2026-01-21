@@ -1,7 +1,6 @@
 gunicorn
 Django
 Pillow
-whitenoise
 psycopg2-binary
 python-decouple
 dj-database-url
