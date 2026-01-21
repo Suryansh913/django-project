@@ -28,7 +28,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [ 
     'django-project-2-3l3e.onrender.com',
-    'localhost'
+    '*.onrender.com',
+    'localhost',
+    '127.0.0.1'
     ]
 
 
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
